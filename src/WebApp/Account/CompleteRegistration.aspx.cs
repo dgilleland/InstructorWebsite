@@ -11,7 +11,20 @@ namespace WebApp.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                FirstName.Text = Session["fn"].ToString();
+                LoginName.Text = Session["ln"].ToString();
+                Surname.Text = Session["sn"].ToString();
+                EMail.Text = Session["em"].ToString();
+                CourseFullName.Text = Session["c_fn"].ToString();
+                CourseShortName.Text = Session["c_sn"].ToString();
+                SelfRegistrationPanel.Visible = !(MessageLabel.Visible = false);
+            }
+            catch
+            {
+                MessageLabel.Text = "Consult your instructor for details on how to complete your self-registration";
+            }
         }
     }
 }
