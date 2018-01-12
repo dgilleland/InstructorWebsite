@@ -203,6 +203,7 @@
     <Compile Include="Account\CompleteRegistration.aspx.designer.cs">
       <DependentUpon>CompleteRegistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\DataStore\FileContext.cs" />
     <Compile Include="Account\FromMoodle.aspx.cs">
       <DependentUpon>FromMoodle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +211,7 @@
     <Compile Include="Account\FromMoodle.aspx.designer.cs">
       <DependentUpon>FromMoodle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Model\UserAccount.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -260,7 +262,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
