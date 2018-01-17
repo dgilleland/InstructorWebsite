@@ -27,6 +27,13 @@ namespace WebApp.Account.Model
 
         public Dictionary<string, UserAccount> Students { get; set; }
             = new Dictionary<string, UserAccount>();
+        //public IEnumerable<UserAccount> ClassList
+        //{
+        //    get
+        //    {
+        //        return Students.Values
+        //    }
+        //}
 
         public static CourseOffering Create(string fullCourseName, string shortCourseName)
         {

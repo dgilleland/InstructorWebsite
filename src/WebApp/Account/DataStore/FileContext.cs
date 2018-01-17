@@ -29,7 +29,35 @@ namespace WebApp.Account.DataStore
             }
         }
 
-        
+        public static CourseOffering FindCourse(CourseOffering searchCourse)
+        {
+            using (var db = new LiteDatabase(Connection))
+            {
+                var courses = db.GetCollection<CourseOffering>();
+                var results = courses.Find(x => x.CourseNumber == searchCourse.CourseNumber && x.Term.TermId == searchCourse.Term.TermId && x.Section == searchCourse.Section).SingleOrDefault();
+                return results;
+            }
+        }
+
+        public static void CreateCourse(CourseOffering course)
+        {
+            using (var db = new LiteDatabase(Connection))
+            {
+                var courses = db.GetCollection<CourseOffering>();
+                courses.Insert(course);
+            }
+        }
+
+        public static void UpdateCourse(CourseOffering course)
+        {
+            using (var db = new LiteDatabase(Connection))
+            {
+                var courses = db.GetCollection<CourseOffering>();
+                courses.Update(course);
+            }
+        }
+
+
 
         //public static IEnumerable<string> GetCourseOfferingFiles()
         //{
