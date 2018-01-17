@@ -29,6 +29,9 @@
         <div class="col-md-6">
             <h3>Additional Registration Details</h3>
             <p>Your instructor has indicated you need the following additional details to complete your registration.</p>
+            <asp:Label ID="Label7" runat="server" AssociatedControlID="GitHubUserName">GitHub Username</asp:Label>
+            <asp:TextBox ID="GitHubUserName" runat="server" CssClass="form-control" />
+            <asp:LinkButton ID="RegisterMe" runat="server" CssClass="btn btn-primary" OnClick="RegisterMe_Click">Complete Registration</asp:LinkButton>
         </div>
     </div>
     <%--Override Site.css that sets a max-width to these input controls--%>
