@@ -31,17 +31,25 @@ namespace WebApp.Account
 
         protected void RegisterMe_Click(object sender, EventArgs e)
         {
-            var userAccount = new UserAccount()
+            try
             {
-                LoginName = LoginName.Text,
-                FirstName = FirstName.Text,
-                LastName = Surname.Text,
-                Email = EMail.Text,
-                GitHubUsername = GitHubUserName.Text
-            };
-            var course = CourseOffering.Create(CourseFullName.Text, CourseShortName.Text);
-            new AccountManager().SelfRegistration(course, userAccount);
-            Response.Redirect("~/Default.aspx");
+                var userAccount = new UserAccount()
+                {
+                    LoginName = LoginName.Text,
+                    FirstName = FirstName.Text,
+                    LastName = Surname.Text,
+                    Email = EMail.Text,
+                    GitHubUsername = GitHubUserName.Text
+                };
+                var course = CourseOffering.Create(CourseFullName.Text, CourseShortName.Text);
+                new AccountManager().SelfRegistration(course, userAccount);
+                Response.Redirect("~/Default.aspx");
+            }
+            catch(Exception ex)
+            {
+                MessageLabel.Text = ex.Message;
+                RegisterMe.Enabled = false;
+            }
         }
     }
 }
